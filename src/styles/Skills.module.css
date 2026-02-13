@@ -1,0 +1,155 @@
+.section {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 5rem 1.5rem;
+}
+
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 200ms ease;
+}
+
+.line {
+    height: 1px;
+    width: 3rem;
+    background-color: var(--text-accent);
+}
+
+.glassCard {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 2rem;
+    padding: 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.glassCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(99, 102, 241, 0.1),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.glassCard:hover::before {
+    left: 100%;
+}
+
+.glassCard:hover {
+    background: var(--card-bg);
+    box-shadow: var(--shadow-accent);
+    transform: translateY(-2px);
+}
+
+.skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    position: relative;
+    z-index: 1;
+}
+
+.skillTag {
+    background: var(--skill-bg);
+    border: 1px solid var(--skill-border);
+    color: var(--text-accent);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    animation: skillFadeInUp 0.5s ease forwards;
+    animation-delay: var(--delay, 0s);
+    cursor: default;
+}
+
+@keyframes skillFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skillTag:hover {
+    background: var(--skill-hover-bg);
+    border-color: var(--text-accent);
+    color: var(--foreground);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-accent);
+}
+
+@media (max-width: 767px) {
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    .glassCard {
+        padding: 1.5rem;
+        border-radius: 1.5rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.25rem;
+    }
+
+    .line {
+        width: 2rem;
+    }
+
+    .skillTag {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 479px) {
+    .section {
+        padding: 2.5rem 0.75rem;
+    }
+
+    .glassCard {
+        padding: 1.25rem;
+        border-radius: 1.25rem;
+    }
+
+    .sectionTitle {
+        font-size: 1.1rem;
+        gap: 0.75rem;
+    }
+
+    .line {
+        width: 1.5rem;
+    }
+
+    .skillsList {
+        gap: 0.5rem;
+    }
+
+    .skillTag {
+        padding: 0.35rem 0.6rem;
+        font-size: 0.75rem;
+    }
+}
+

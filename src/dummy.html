@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Frontend Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #030712; color: #f1f5f9; }
+        .glass { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,0.08); }
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .expanded { -webkit-line-clamp: unset !important; }
+        .project-card:hover { border-color: #6366f1; transform: translateY(-4px); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+    </style>
+</head>
+<body class="selection:bg-indigo-500 selection:text-white">
+
+    <nav class="fixed w-full z-[100] p-4 md:p-6">
+        <div class="max-w-7xl mx-auto glass rounded-2xl px-6 py-4 flex justify-between items-center shadow-2xl">
+            <h1 class="text-xl font-bold tracking-tighter">JS<span class="text-indigo-500">.</span>DEV</h1>
+            <div class="hidden md:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#projects" class="hover:text-white transition">Projects</a>
+                <a href="#skills" class="hover:text-white transition">Stack</a>
+            </div>
+            <a href="mailto:hello@dev.com" class="bg-indigo-600 hover:bg-indigo-500 text-white px-5 py-2 rounded-xl text-xs font-bold transition">Hire Me</a>
+        </div>
+    </nav>
+
+    <section class="pt-32 md:pt-48 pb-20 px-6 max-w-7xl mx-auto">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-bold mb-6">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    3 YEARS OF FRONTEND EXCELLENCE
+                </div>
+                <h2 class="text-4xl md:text-7xl font-bold mb-6 leading-[1.1]">Crafting Digital <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-emerald-400">Masterpieces.</span></h2>
+                <p id="hero-bio" class="text-slate-400 text-base md:text-lg max-w-xl mb-8 leading-relaxed mx-auto lg:mx-0"></p>
+                <div class="flex flex-wrap justify-center lg:justify-start gap-4" id="hero-socials"></div>
+            </div>
+            <div class="hidden lg:block relative group">
+                <div class="absolute inset-0 bg-indigo-600 rounded-[3rem] rotate-6 opacity-20 group-hover:rotate-3 transition duration-500"></div>
+                <img id="main-img" src="" class="relative z-10 w-full aspect-square object-cover rounded-[3rem] border border-white/10 shadow-2xl" alt="Profile">
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-6 space-y-32 pb-32">
+        
+        <section id="experience">
+            <h3 class="text-2xl font-bold mb-10 flex items-center gap-4">
+                <span class="h-px w-12 bg-indigo-500"></span> Professional Journey
+            </h3>
+            <div id="experience-container" class="grid gap-6 md:grid-cols-2"></div>
+        </section>
+
+        <section id="projects">
+            <h3 class="text-2xl font-bold mb-10 flex items-center gap-4">
+                <span class="h-px w-12 bg-emerald-500"></span> Selected Work
+            </h3>
+            <div id="projects-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </section>
+
+        <section id="skills" class="grid lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 glass p-8 rounded-3xl">
+                <h4 class="text-lg font-bold mb-6">Technical Stack</h4>
+                <div id="skills-list" class="flex flex-wrap gap-2"></div>
+            </div>
+            <div class="glass p-8 rounded-3xl">
+                <h4 class="text-lg font-bold mb-6">Education</h4>
+                <div id="edu-list" class="space-y-6"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="text-slate-500 text-[10px] font-bold tracking-[0.3em]">© 2026 CODED BY YOU · ALL RIGHTS RESERVED</p>
+    </footer>
+
+    <script>
+        const PORTFOLIO = {
+            profile: {
+                bio: "Frontend Engineer with 3 years of building high-traffic React applications. Focused on atomic design, performance metrics, and seamless UX animations.",
+                image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800",
+                socials: [
+                    { name: 'GitHub', link: '#', icon: 'fab fa-github' },
+                    { name: 'LinkedIn', link: '#', icon: 'fab fa-linkedin' }
+                ]
+            },
+            experience: [
+                { role: "Senior Frontend", company: "MetaScale", date: "2023-2026", desc: "Revolutionized the dashboard UI using Next.js 14, resulting in a 30% increase in user retention and sub-second page loads." },
+                { role: "React Developer", company: "WebFlow Agency", date: "2021-2023", desc: "Collaborated with designers to transform Figma mockups into pixel-perfect, accessible React components for global clients." }
+            ],
+            skills: ["React 18", "Next.js", "TypeScript", "Tailwind", "Three.js", "Redux", "Node.js", "AWS", "Figma", "Unit Testing", "GraphQL", "Git"],
+            education: [
+                { degree: "B.Sc Computer Science", school: "Global University", year: "2021" }
+            ],
+            projects: Array(10).fill(null).map((_, i) => ({
+                id: i,
+                title: `Premium Project ${i + 1}`,
+                shortDesc: "A high-performance web solution built for enterprise scalability and global reach.",
+                fullDesc: "This project involved complex state management using Redux Toolkit and real-time data streaming via WebSockets. I implemented a custom design system with Tailwind CSS and ensured 98+ Lighthouse scores across all devices. The backend integrates with Node.js and PostgreSQL for seamless data handling.",
+                tech: ["Next.js", "TypeScript", "SQL"],
+                img: `https://picsum.photos/seed/${i + 20}/800/600`
+            }))
+        };
+
+        // RENDER LOGIC
+        document.getElementById('hero-bio').innerText = PORTFOLIO.profile.bio;
+        document.getElementById('main-img').src = PORTFOLIO.profile.image;
+        document.getElementById('hero-socials').innerHTML = PORTFOLIO.profile.socials.map(s => `
+            <a href="${s.link}" class="glass px-6 py-3 rounded-xl hover:bg-white hover:text-black transition flex items-center gap-3">
+                <i class="${s.icon}"></i> <span class="text-xs font-bold uppercase tracking-widest">${s.name}</span>
+            </a>
+        `).join('');
+
+        document.getElementById('experience-container').innerHTML = PORTFOLIO.experience.map(e => `
+            <div class="glass p-8 rounded-3xl">
+                <div class="flex justify-between items-start mb-4">
+                    <h4 class="text-xl font-bold">${e.role}</h4>
+                    <span class="text-[10px] font-black bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded-full uppercase">${e.date}</span>
+                </div>
+                <p class="text-indigo-400 font-bold text-sm mb-3">${e.company}</p>
+                <p class="text-slate-400 text-sm leading-relaxed">${e.desc}</p>
+            </div>
+        `).join('');
+
+        document.getElementById('projects-grid').innerHTML = PORTFOLIO.projects.map(p => `
+            <div class="project-card glass p-4 rounded-[2rem] flex flex-col h-full group">
+                <div class="overflow-hidden rounded-[1.5rem] mb-6">
+                    <img src="${p.img}" class="group-hover:scale-110 transition duration-700 opacity-80" />
+                </div>
+                <div class="px-2 flex-grow">
+                    <h4 class="text-xl font-bold text-white mb-2">${p.title}</h4>
+                    <div class="flex gap-2 mb-4">
+                        ${p.tech.map(t => `<span class="text-[9px] bg-white/5 border border-white/10 px-2 py-0.5 rounded uppercase font-bold text-slate-400">${t}</span>`).join('')}
+                    </div>
+                    
+                    <div id="desc-${p.id}" class="text-slate-400 text-sm leading-relaxed line-clamp-2 transition-all duration-500 mb-4">
+                        ${p.fullDesc}
+                    </div>
+                    
+                    <button onclick="toggleDesc(${p.id}, this)" class="text-indigo-400 font-bold text-xs uppercase tracking-widest flex items-center gap-2 hover:text-white transition">
+                        <span>Read More</span> <i class="fa-solid fa-chevron-down text-[10px] transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+        `).join('');
+
+        document.getElementById('skills-list').innerHTML = PORTFOLIO.skills.map(s => `
+            <span class="bg-white/5 border border-white/10 px-4 py-2 rounded-xl text-xs font-bold hover:bg-indigo-600 transition cursor-default">${s}</span>
+        `).join('');
+
+        document.getElementById('edu-list').innerHTML = PORTFOLIO.education.map(ed => `
+            <div>
+                <p class="text-indigo-400 font-black text-[10px] mb-1 uppercase tracking-widest">${ed.year}</p>
+                <h5 class="font-bold text-white">${ed.degree}</h5>
+                <p class="text-slate-500 text-sm">${ed.school}</p>
+            </div>
+        `).join('');
+
+        // INTERACTION SCRIPT
+        function toggleDesc(id, btn) {
+            const el = document.getElementById(`desc-${id}`);
+            const icon = btn.querySelector('i');
+            const span = btn.querySelector('span');
+            
+            if (el.classList.contains('line-clamp-2')) {
+                el.classList.remove('line-clamp-2');
+                icon.style.transform = 'rotate(180deg)';
+                span.innerText = 'Read Less';
+            } else {
+                el.classList.add('line-clamp-2');
+                icon.style.transform = 'rotate(0deg)';
+                span.innerText = 'Read More';
+            }
+        }
+    </script>
+</body>
+</html>

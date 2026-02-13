@@ -1,0 +1,166 @@
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 2.5rem;
+    padding: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    animation: staggerFadeInUp 0.6s ease forwards, glowPulse 3s ease-in-out infinite;
+    animation-delay: var(--delay, 0s), 0.6s;
+    position: relative;
+    overflow: hidden;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover {
+    border-color: var(--text-accent);
+    background: var(--card-bg);
+    transform: translateX(5px) translateY(-5px);
+    box-shadow: var(--shadow-accent);
+}
+
+@keyframes gradientRotate {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes staggerFadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.imageWrapper {
+    border-radius: 1.8rem;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+    margin-bottom: 1.5rem;
+}
+
+.imageLink {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.imageLink:hover {
+    cursor: pointer;
+}
+
+.imageWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: all 0.6s ease;
+}
+
+.card:hover .imageWrapper img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.category {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--text-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.5rem;
+    display: block;
+    transition: color 200ms ease;
+}
+
+
+.techTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+    margin-top: 1.25rem;
+}
+
+.techTags span {
+    background: var(--skill-bg);
+    padding: 0.25rem 0.6rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    border: 1px solid var(--skill-border);
+    transition: all 0.3s ease;
+}
+
+.techTags span:hover {
+    background: var(--skill-hover-bg);
+    border-color: var(--text-accent);
+    color: var(--foreground);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-accent);
+}
+
+/* Expandable Description Logic */
+.description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    transition: max-height 0.5s ease, color 200ms ease;
+}
+
+.collapsed {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Exact 3 line cutoff */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.expanded {
+    display: block;
+}
+
+.expandBtn {
+    margin-top: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-accent);
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 200ms ease;
+}
+
+.expandBtn:hover {
+    color: var(--foreground);
+}
+
+.rotate {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    transition: color 200ms ease;
+}

@@ -1,0 +1,229 @@
+.heroSection {
+    padding: 6rem 1.25rem 3rem;
+    max-width: 80rem;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .heroSection {
+        padding: 8rem 1.5rem 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heroSection {
+        padding: 9rem 1.5rem 5rem;
+    }
+}
+
+.heroGrid {
+    display: grid;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .heroGrid {
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heroGrid {
+        gap: 4rem;
+        grid-template-columns: 1.2fr 0.8fr;
+        text-align: left;
+    }
+}
+
+/* Availability Badge */
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.35rem 0.85rem;
+    background: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    border-radius: 9999px;
+    color: var(--badge-text);
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.25rem;
+    transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+@media (min-width: 768px) {
+    .badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.7rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.pingContainer { position: relative; display: flex; height: 0.5rem; width: 0.5rem; }
+.pingPulse {
+    position: absolute;
+    height: 100%; width: 100%;
+    background: var(--badge-text);
+    border-radius: 50%;
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+.pingMain { background: var(--text-accent); border-radius: 50%; height: 0.5rem; width: 0.5rem; position: relative; }
+
+@keyframes ping {
+    75%, 100% { transform: scale(3); opacity: 0; }
+}
+
+.title {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .title {
+        font-size: 3.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .title {
+        font-size: 4rem;
+    }
+}
+
+@media (min-width: 1280px) {
+    .title {
+        font-size: 5rem;
+    }
+}
+
+.gradientText {
+    background: var(--gradient-text);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bio {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 35rem;
+    transition: color 200ms ease;
+}
+
+@media (min-width: 768px) {
+    .bio {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-bottom: 2.5rem;
+    }
+}
+
+/* Image with Rotated Card Effect */
+.imageWrapper {
+    position: relative;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .imageWrapper {
+        max-width: 260px;
+    }
+}
+
+@media (min-width: 768px) {
+    .imageWrapper {
+        max-width: 300px;
+    }
+}
+
+.imageBgCard {
+    position: absolute;
+    inset: 0;
+    background: var(--image-card-bg);
+    border-radius: 3rem;
+    transform: rotate(6deg);
+    opacity: 0.6;
+    transition: transform 0.6s ease, background 200ms ease;
+}
+
+.imageWrapper:hover .imageBgCard {
+    transform: rotate(2deg) scale(1.02);
+}
+
+.profileImg {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 3rem;
+    border: 1px solid var(--image-card-border);
+    box-shadow: var(--shadow-lg);
+    transition: border-color 200ms ease;
+}
+.socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.primaryBtn {
+  padding: 0.75rem 1.75rem;
+  background: var(--primary-btn-bg);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-accent);
+}
+.secondaryBtn {
+  padding: 0.75rem 1.75rem;
+  background: transparent;
+  color: var(--secondary-btn-text);
+  font-weight: 600;
+  border-radius: 9999px;
+  border: 1px solid var(--secondary-btn-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.secondaryBtn:hover {
+  background: var(--skill-hover-bg);
+  border-color: var(--text-accent);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+}
+@media (max-width: 640px) {
+  .socials {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+.highlight {
+  font-weight: 700;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+

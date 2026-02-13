@@ -1,0 +1,368 @@
+@import "tailwindcss";
+
+/* ===============================
+   CSS Custom Properties for Theming
+================================ */
+
+:root {
+  /* Light theme */
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --muted-foreground: #475569;
+  --accent: #2563eb;
+  --accent-foreground: #ffffff;
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #2563eb;
+  
+  /* Component-specific light theme */
+  --nav-bg: rgba(248, 250, 252, 0.85);
+  --nav-border: rgba(226, 232, 240, 0.8);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(226, 232, 240, 0.6);
+  --glass-bg: rgba(255, 255, 255, 0.5);
+  
+  /* Text colors */
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --text-accent: #6366f1;
+  --text-link: #4f46e5;
+  
+  /* Gradient text */
+  --gradient-text: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
+  
+  /* Section backgrounds */
+  --section-bg: transparent;
+  --footer-bg: linear-gradient(180deg, rgba(248, 250, 252, 0) 0%, rgba(241, 245, 249, 0.5) 50%);
+  --footer-border: #e2e8f0;
+  
+  /* Social link colors */
+  --social-bg: rgba(99, 102, 241, 0.08);
+  --social-border: rgba(99, 102, 241, 0.15);
+  --social-hover-bg: rgba(99, 102, 241, 0.15);
+  
+  /* Skill tag */
+  --skill-bg: rgba(99, 102, 241, 0.08);
+  --skill-border: rgba(99, 102, 241, 0.2);
+  --skill-hover-bg: rgba(99, 102, 241, 0.2);
+  
+  /* Button colors */
+  --primary-btn-bg: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --secondary-btn-border: rgba(99, 102, 241, 0.4);
+  --secondary-btn-text: #4f46e5;
+  
+  /* Badge */
+  --badge-bg: rgba(99, 102, 241, 0.1);
+  --badge-border: rgba(99, 102, 241, 0.2);
+  --badge-text: #6366f1;
+  
+  /* Image card */
+  --image-card-bg: linear-gradient(45deg, #e0e7ff, #c7d2fe);
+  --image-card-border: rgba(99, 102, 241, 0.2);
+  
+  /* Overlay */
+  --overlay-bg: rgba(0, 0, 0, 0.3);
+  --sidebar-bg: rgba(248, 250, 252, 0.95);
+  
+  /* Meta colors */
+  --meta-light: #0ea5e9;
+  --meta-dark: #0f172a;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  --shadow-accent: 0 10px 25px rgba(99, 102, 241, 0.25);
+  
+  /* Theme toggle */
+  --toggle-bg: rgba(15, 23, 42, 0.06);
+  --toggle-border: rgba(15, 23, 42, 0.06);
+  --toggle-hover-bg: rgba(15, 23, 42, 0.1);
+}
+
+/* Dark theme */
+.dark {
+  --background: #071127;
+  --foreground: #e6eef8;
+  --muted: #94a3b8;
+  --muted-foreground: #94a3b8;
+  --accent: #60a5fa;
+  --accent-foreground: #0f172a;
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #60a5fa;
+  
+  /* Component-specific dark theme */
+  --nav-bg: rgba(15, 23, 42, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.06);
+  --card-bg: rgba(30, 41, 59, 0.4);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --glass-bg: rgba(30, 41, 59, 0.4);
+  
+  /* Text colors */
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5f5;
+  --text-muted: #94a3b8;
+  --text-accent: #818cf8;
+  --text-link: #818cf8;
+  
+  /* Section backgrounds */
+  --section-bg: transparent;
+  --footer-bg: linear-gradient(180deg, rgba(15, 23, 42, 0) 0%, rgba(30, 41, 59, 0.5) 50%);
+  --footer-border: rgba(148, 163, 184, 0.1);
+  
+  /* Social link colors */
+  --social-bg: linear-gradient(145deg, rgba(30, 41, 59, 0.6), rgba(15, 23, 42, 0.85));
+  --social-border: rgba(255, 255, 255, 0.06);
+  --social-hover-bg: rgba(99, 102, 241, 0.25);
+  
+  /* Skill tag */
+  --skill-bg: rgba(99, 102, 241, 0.1);
+  --skill-border: rgba(99, 102, 241, 0.3);
+  --skill-hover-bg: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(129, 140, 248, 0.2));
+  
+  /* Button colors */
+  --primary-btn-bg: linear-gradient(135deg, #6366f1, #8b5cf6);
+  --secondary-btn-border: rgba(129, 140, 248, 0.5);
+  --secondary-btn-text: #c7d2fe;
+  
+  /* Badge */
+  --badge-bg: rgba(99, 102, 241, 0.1);
+  --badge-border: rgba(99, 102, 241, 0.2);
+  --badge-text: #818cf8;
+  
+  /* Image card */
+  --image-card-bg: linear-gradient(45deg, #4f46e5, #064e3b);
+  --image-card-border: rgba(255, 255, 255, 0.1);
+  
+  /* Overlay */
+  --overlay-bg: rgba(0, 0, 0, 0.55);
+  --sidebar-bg: rgba(15, 23, 42, 0.95);
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3);
+  --shadow-accent: 0 10px 25px rgba(99, 102, 241, 0.3);
+  
+  /* Theme toggle */
+  --toggle-bg: rgba(255, 255, 255, 0.04);
+  --toggle-border: rgba(255, 255, 255, 0.08);
+  --toggle-hover-bg: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* Support manual dark mode toggle by adding `dark` class on <html> */
+/* Dark class is now handled above with CSS custom properties */
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial);
+  overflow-x: hidden;
+}
+
+/* smooth color transition on theme change */
+html, body {
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+/* ===============================
+   Global Animation Keyframes
+================================ */
+
+/* Fade In Up - for elements moving up while fading in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Down - for elements moving down while fading in */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Left - for elements sliding in from left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Right - for elements sliding in from right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Slide Down - for navbar and header elements */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scale In - for elements scaling up while fading in */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Float - for floating background elements */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Pulse - for subtle pulse effects */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Bounce - for attention-grabbing elements */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===============================
+   Utility Animation Classes
+================================ */
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.6s ease forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.6s ease forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.5s ease forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s ease infinite;
+}
+
+/* Stagger animation delays */
+.stagger-delay-1 { animation-delay: 0.1s; }
+.stagger-delay-2 { animation-delay: 0.2s; }
+.stagger-delay-3 { animation-delay: 0.3s; }
+.stagger-delay-4 { animation-delay: 0.4s; }
+.stagger-delay-5 { animation-delay: 0.5s; }
+.stagger-delay-6 { animation-delay: 0.6s; }
+
+/* Theme toggle styles */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 36px;
+  border-radius: 8px;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.theme-toggle:hover {
+  background: var(--toggle-hover-bg);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.theme-toggle .icon {
+  font-size: 16px;
+  line-height: 1;
+}
+

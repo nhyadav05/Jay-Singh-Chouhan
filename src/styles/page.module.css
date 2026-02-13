@@ -1,0 +1,61 @@
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 200ms ease;
+}
+
+.line {
+    height: 1px;
+    width: 3rem;
+    background-color: var(--text-accent);
+}
+
+.mainWrapper {
+    background-color: var(--background);
+    min-height: 100vh;
+    color: var(--foreground);
+    overflow-x: hidden;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.projectsContainer {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1rem 5rem; /* Reduced padding from 1.5rem to 1rem */
+}
+
+.projectsGrid {
+    display: grid;
+    /* Force 1 column on very small screens, 
+       then auto-fill when there is enough space */
+    grid-template-columns: 1fr; 
+    gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .projectsGrid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2.5rem;
+    }
+}
+
+/* Subtle fade-in for the grid */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.projectsGrid {
+    animation: fadeInUp 0.8s ease forwards;
+}

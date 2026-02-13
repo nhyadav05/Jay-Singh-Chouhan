@@ -1,0 +1,16 @@
+.sectionTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 2.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: color 200ms ease;
+}
+
+.line {
+    height: 1px;
+    width: 3rem;
+    background-color: var(--text-accent);
+}
